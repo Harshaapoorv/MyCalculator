@@ -3,10 +3,20 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "android": "react-native run-android --port=5999",
+    "ios": "react-native run-ios --port=5998",
     "lint": "eslint .",
     "start": "react-native start",
+    "android-clean": "cd android && ./gradlew clean",
+    "android-build": "cd android && ./gradlew assembleRelease",
+    "android-install": "cd android && ./gradlew installRelease",
+    "android:prod": "react-native run-android --mode=release",
+    "android:release": "react-native build-android --mode=release",
+    "ios:prod": "react-native run-ios --configuration Release",
+    "ios:release": "react-native build-ios --configuration Release",
+    "build:all": "npm run android-build && npm run ios:release",
+    "build:ios": "react-native bundle --reset-cache --platform='ios' --dev=false --entry-file='index.js' --bundle-output='ios/main.jsbundle'",
+    "build:android": "react-native bundle --reset-cache --platform='android' --dev=false --entry-file='index.js' --bundle-output='android/app/src/main/assets/index.android.bundle'",
     "test": "jest"
   },
   "dependencies": {
