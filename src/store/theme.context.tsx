@@ -1,4 +1,5 @@
 import React from 'react';
+import { useColorScheme } from 'react-native';
 import { lightTheme } from './light.theme';
 import { darkTheme } from './dark.theme';
 import { Theme } from './theme.interface';
@@ -19,9 +20,15 @@ interface Props {
 }
 
 export const ThemeProvider = React.memo<Props>(props => {
+  const isSystemDark = useColorScheme() === 'dark';
+
   const [theme, setTheme] = React.useState<Theme>(
-    props.initialTheme || lightTheme,
+    isSystemDark ? darkTheme : lightTheme,
   );
+
+  React.useEffect(() => {
+    setTheme(isSystemDark ? darkTheme : lightTheme);
+  }, [isSystemDark]);
 
   const toggleTheme = React.useCallback(() => {
     setTheme(prevTheme => (prevTheme.id === 'light' ? darkTheme : lightTheme));

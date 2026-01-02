@@ -6,7 +6,7 @@ const darkColorTheme: ColorTheme = {
   primary_display_text: colors.darkText,
   secondary_display_text: '#555555',
   operand_button_background: '#E0E0E0',
-  operand_button_text: colors.darkText,
+  operand_button_text: colors.lightText,
   operator_button_background: colors.primary,
   operator_button_text: colors.lightText,
   special_button_background: colors.secondary,

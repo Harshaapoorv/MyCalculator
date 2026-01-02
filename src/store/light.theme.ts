@@ -5,10 +5,10 @@ const lightColorTheme: ColorTheme = {
   background: colors.lightBackground,
   primary_display_text: colors.secondary,
   secondary_display_text: '#555555',
-  operand_button_background: '#E0E0E0',
+  operand_button_background: '#000000',
   operand_button_text: colors.darkText,
   operator_button_background: colors.primary,
-  operator_button_text: colors.lightText,
+  operator_button_text: colors.darkText,
   special_button_background: colors.secondary,
   special_button_text: colors.darkText,
 };
