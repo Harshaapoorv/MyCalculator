@@ -44,7 +44,7 @@ This project demonstrates strong fundamentals in state management, UI/UX design,
 
 ## 📱 Screenshots
 
-<img width="1206" height="2622" alt="Simulator Screenshot - iPhone 17 Pro - 2026-01-28 at 19 51 22" src="https://github.com/user-attachments/assets/2b6174a1-4972-4c14-b31e-5b748b3fec18" />
+<img width="120" height="262" alt="Simulator Screenshot - iPhone 17 Pro - 2026-01-28 at 19 51 22" src="https://github.com/user-attachments/assets/2b6174a1-4972-4c14-b31e-5b748b3fec18" />
 <img width="1206" height="2622" alt="Simulator Screenshot - iPhone 17 Pro - 2026-01-28 at 19 51 10" src="https://github.com/user-attachments/assets/37e96632-be66-41a4-833d-c3a6156c1fdd" />
 <img width="1206" height="2622" alt="Simulator Screenshot - iPhone 17 Pro - 2026-01-28 at 19 51 02" src="https://github.com/user-attachments/assets/fcfe8206-7cd9-4a25-bb03-a01d1f2dfb0d" />
 <img width="1206" height="2622" alt="Simulator Screenshot - iPhone 17 Pro - 2026-01-28 at 19 50 57" src="https://github.com/user-attachments/assets/5333542a-4314-4430-abb1-482ad2f5c087" />
