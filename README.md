@@ -53,6 +53,10 @@ This project demonstrates strong fundamentals in state management, UI/UX design,
 <img width="120" height="262" alt="Simulator Screenshot - iPhone 17 Pro - 2026-01-28 at 18 25 19" src="https://github.com/user-attachments/assets/84cea038-c4d2-4baa-a6fa-cbdc94ea33c3" />
 <img width="120" height="262" alt="Simulator Screenshot - iPhone 17 Pro - 2026-01-28 at 18 25 11" src="https://github.com/user-attachments/assets/0bcc50f0-723d-406c-b189-a14d3a45894b" />
 
+---
+
+
+
 ```
 
 Light Theme      |      Dark Theme
