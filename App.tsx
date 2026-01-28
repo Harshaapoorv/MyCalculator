@@ -13,9 +13,9 @@ function App() {
         <SafeAreaView
           style={[
             styles.container,
-            { backgroundColor: theme.theme.colors.background },
+            { backgroundColor: theme.theme.colors.displayBackground },
           ]}
-          edges={['top', 'bottom']}
+          edges={['top']}
         >
           <Main />
         </SafeAreaView>
@@ -28,7 +28,7 @@ const getStyles = (theme: any) =>
   StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: theme.colors.background,
+      backgroundColor: theme.colors.displayBackground,
     },
   });
 

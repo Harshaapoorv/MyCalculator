@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Decimal from 'decimal.js';
 
 export default function useCalculator() {
   const [displayValue, setDisplayValue] = useState('0');
@@ -6,9 +7,25 @@ export default function useCalculator() {
   const [firstOperand, setFirstOperand] = useState(null);
   const [isWaitingForSecondOperand, setIsWaitingForSecondOperand] =
     useState(false);
+  const [justEvaluated, setJustEvaluated] = useState(false);
 
   const handleDigit = ({ value }) => {
     if (!isWaitingForSecondOperand) {
+      if (displayValue === 'Error') {
+        setDisplayValue(value);
+        setFirstOperand(null);
+        setOperator(null);
+        setIsWaitingForSecondOperand(false);
+        return;
+      }
+      if (justEvaluated) {
+        setDisplayValue(value === '.' ? '0.' : value);
+        setJustEvaluated(false);
+        setOperator(null);
+        setFirstOperand(null);
+        setIsWaitingForSecondOperand(false);
+        return;
+      }
       if (displayValue === '0' && value !== '.') {
         setDisplayValue(value);
       } else {
@@ -27,6 +44,9 @@ export default function useCalculator() {
   };
 
   const handleOperator = ({ operatorValue }) => {
+    if (operatorValue === '=') {
+      setJustEvaluated(true);
+    }
     if (operator === null && isWaitingForSecondOperand === false) {
       setOperator(operatorValue);
       setFirstOperand(displayValue);
@@ -43,18 +63,28 @@ export default function useCalculator() {
         result = parseFloat(firstOperand) * parseFloat(displayValue);
         setDisplayValue(String(result));
       } else if (operator === '÷') {
-        result = parseFloat(firstOperand) / parseFloat(displayValue);
-        if (isNaN(result) || !isFinite(result)) {
+        result = Decimal.div(firstOperand, displayValue).toFixed(2).toString();
+        if (result === 'NaN' || result === 'Infinity') {
           result = 'Error';
         }
         setDisplayValue(String(result));
+        // Removed to use Decimal.js for accurate division}
+        // result = parseFloat(firstOperand) / parseFloat(displayValue);
+        // if (isNaN(result) || !isFinite(result)) {
+        //   result = 'Error';
+        // }
+        // setDisplayValue(String(result));
       } else if (operator === '=') {
         setDisplayValue(displayValue);
         result = parseFloat(displayValue);
+      } else {
+        setOperator(operatorValue);
       }
       setFirstOperand(result);
       setOperator(operatorValue === '=' ? null : operatorValue);
       if (operatorValue !== '=') setIsWaitingForSecondOperand(true);
+    } else if (operator && isWaitingForSecondOperand) {
+      setOperator(operatorValue);
     }
   };
 
@@ -65,10 +95,22 @@ export default function useCalculator() {
     setIsWaitingForSecondOperand(false);
   };
 
+  const handleBackspace = () => {
+    if (isWaitingForSecondOperand) return;
+    if (displayValue === 'Error') return;
+
+    if (displayValue.length === 1) {
+      setDisplayValue('0');
+    } else {
+      setDisplayValue(prev => prev.slice(0, -1));
+    }
+  };
+
   return {
     displayValue,
     handleDigit,
     handleOperator,
     handleClear,
+    handleBackspace,
   };
 }

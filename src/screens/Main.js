@@ -9,40 +9,11 @@ const Main = () => {
 
   return (
     <View style={styles.container}>
-      <View
-        style={{
-          alignItems: 'center',
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'center',
-          width: '100%',
-        }}
-      >
+      <View style={styles.header}>
         <Text style={styles.heading}>My Calculator</Text>
-        <View
-          style={{
-            width: 48,
-            height: 24,
-            borderRadius: 12,
-            marginTop: 20,
-            backgroundColor: theme.colors.primary_display_text,
-            alignSelf: 'flex-end',
-            position: 'absolute',
-            right: 16,
-            justifyContent: 'center',
-          }}
-        >
+        <View style={styles.toggleContainer}>
           <TouchableOpacity onPress={toggleTheme}>
-            <View
-              style={{
-                width: 20,
-                height: 20,
-                borderRadius: 10,
-                backgroundColor: theme.colors.background,
-                margin: 2,
-                alignSelf: theme.id === 'light' ? 'flex-start' : 'flex-end',
-              }}
-            />
+            <View style={styles.toggle} />
           </TouchableOpacity>
         </View>
       </View>
@@ -55,9 +26,16 @@ const getStyles = theme =>
   StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: theme.colors.background,
+      backgroundColor: theme.colors.displayBackground,
       gap: 48,
-      padding: 16,
+      // padding: 16,
+    },
+    header: {
+      alignItems: 'center',
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      width: '100%',
     },
     heading: {
       color: theme.colors.operator_button_background,
@@ -65,6 +43,25 @@ const getStyles = theme =>
       fontSize: 24,
       textAlign: 'center',
       marginTop: 20,
+    },
+    toggleContainer: {
+      width: 48,
+      height: 24,
+      borderRadius: 12,
+      marginTop: 20,
+      backgroundColor: theme.colors.primary_display_text,
+      alignSelf: 'flex-end',
+      position: 'absolute',
+      right: 16,
+      justifyContent: 'center',
+    },
+    toggle: {
+      width: 20,
+      height: 20,
+      borderRadius: 10,
+      backgroundColor: theme.colors.background,
+      margin: 2,
+      alignSelf: theme.id === 'light' ? 'flex-start' : 'flex-end',
     },
   });
 

@@ -18,17 +18,20 @@ const Display = ({ displayValue }) => {
 const getStyles = theme =>
   StyleSheet.create({
     container: {
-      height: 120,
-      justifyContent: 'flex-end',
+      height: '30%',
+      justifyContent: 'center',
       alignItems: 'flex-end',
+      verticalAlign: 'middle',
+      textAlignVertical: 'center',
       padding: 16,
-      backgroundColor: theme.colors.display_background,
-      borderBottomWidth: 1,
-      borderBottomColor: theme.colors.primary_display_text,
+      backgroundColor: theme.colors.displayBackground,
+      // borderBottomWidth: 1,
+      // borderBottomColor: theme.colors.primary_display_text,
     },
     displayText: {
       fontSize: 48,
       color: theme.colors.primary_display_text,
+      textAlign: 'right',
     },
   });
 

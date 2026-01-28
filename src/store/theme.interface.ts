@@ -1,5 +1,7 @@
 export interface ColorTheme {
   background: string;
+  displayBackground: string;
+  keypadBackground: string;
   primary_display_text: string;
   secondary_display_text: string;
   operand_button_background: string;

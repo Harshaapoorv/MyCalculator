@@ -1,16 +1,34 @@
 import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useTheme } from '../store/theme.context';
+import { LocalSvg } from 'react-native-svg/css';
 
-const Button = ({ label, type, span = 1, onPress, style }) => {
+const Button = ({ label, type, span = 1, onPress, style, icon }) => {
   const { theme } = useTheme();
   const styles = getStyles(theme, span);
+  const asset = require('../icons/delete.svg');
 
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[styles.button, styles[type], style]}
+      style={[
+        styles.button,
+        styles[type],
+        style,
+        theme.id === 'dark' && {
+          shadowColor: '#fff',
+        },
+      ]}
     >
-      <Text style={[styles.buttonText, styles[type + 'Text']]}>{label}</Text>
+      {icon ? (
+        <LocalSvg
+          width={32}
+          height={32}
+          asset={asset}
+          fill={theme.id === 'light' && '#FFFFFF'}
+        />
+      ) : (
+        <Text style={[styles.buttonText, styles[type + 'Text']]}>{label}</Text>
+      )}
     </TouchableOpacity>
   );
 };
@@ -25,7 +43,12 @@ const getStyles = (theme, span) =>
       backgroundColor: '#ccc',
       borderRadius: 40,
       padding: 16,
-      margin: 4,
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.3,
+      shadowRadius: 3,
+      elevation: 5,
+      shadowColor: '#000',
+      // margin: 4,
     },
     buttonText: {
       color: theme.colors.button_text,

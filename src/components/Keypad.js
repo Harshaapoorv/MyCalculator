@@ -2,7 +2,7 @@ import { View, StyleSheet } from 'react-native';
 import { useTheme } from '../store/theme.context';
 import Button from './Button';
 
-const Keypad = ({ onDigit, onOperator, onClear }) => {
+const Keypad = ({ onDigit, onOperator, onClear, onBackspace }) => {
   const { theme } = useTheme();
   const styles = getStyles(theme);
 
@@ -16,9 +16,9 @@ const Keypad = ({ onDigit, onOperator, onClear }) => {
           span={3}
         />
         <Button
-          label="÷"
-          onPress={() => onOperator({ operatorValue: '÷' })}
-          type={'operator'}
+          icon={'../icons/delete.svg'}
+          onPress={() => onBackspace()}
+          type={'operand'}
         />
       </View>
       <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
@@ -89,20 +89,24 @@ const Keypad = ({ onDigit, onOperator, onClear }) => {
       </View>
       <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
         <Button
+          label="0"
+          onPress={() => onDigit({ value: '0' })}
+          type={'operand'}
+        />
+        <Button
+          label="="
+          onPress={() => onOperator({ operatorValue: '=' })}
+          type={'specialOperator'}
+        />
+        <Button
           label="."
           onPress={() => onDigit({ value: '.' })}
           type={'operand'}
         />
         <Button
-          label="0"
-          onPress={() => onDigit({ value: '0' })}
-          type={'operand'}
-        />
-        <Button label="<-" onPress={() => {}} type={'operand'} />
-        <Button
-          label="="
-          onPress={() => onOperator({ operatorValue: '=' })}
-          type={'specialOperator'}
+          label="÷"
+          onPress={() => onOperator({ operatorValue: '÷' })}
+          type={'operator'}
         />
       </View>
     </View>
@@ -114,7 +118,8 @@ const getStyles = theme =>
     container: {
       flex: 1,
       justifyContent: 'space-around',
-      backgroundColor: theme.colors.keypad_background,
+      backgroundColor: theme.colors.keypadBackground,
+      padding: 16,
     },
     keypadText: {
       fontSize: 24,
