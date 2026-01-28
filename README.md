@@ -71,6 +71,9 @@ Light Theme      |      Dark Theme
 
 src/
 │
+├── assets/
+│   └── delete.svg
+│   
 ├── components/
 │   ├── Button.js
 │   ├── Display.js
