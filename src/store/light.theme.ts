@@ -3,6 +3,8 @@ import { ColorTheme, SpacingTheme, FontTheme, Theme } from './theme.interface';
 
 const lightColorTheme: ColorTheme = {
   background: colors.lightBackground,
+  displayBackground: colors.lightDisplayBackground,
+  keypadBackground: colors.lightBackground,
   primary_display_text: colors.secondary,
   secondary_display_text: '#555555',
   operand_button_background: '#000000',

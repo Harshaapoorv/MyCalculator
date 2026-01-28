@@ -17,6 +17,7 @@ const CalculatorScreen = () => {
         onDigit={calculator.handleDigit}
         onOperator={calculator.handleOperator}
         onClear={calculator.handleClear}
+        onBackspace={calculator.handleBackspace}
       />
     </View>
   );
