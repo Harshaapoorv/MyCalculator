@@ -44,6 +44,9 @@ export default function useCalculator() {
   };
 
   const handleOperator = ({ operatorValue }) => {
+    if (justEvaluated && operatorValue !== '=') {
+      setJustEvaluated(false);
+    }
     if (operatorValue === '=') {
       setJustEvaluated(true);
     }
