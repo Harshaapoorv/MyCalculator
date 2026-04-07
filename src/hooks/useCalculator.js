@@ -58,15 +58,18 @@ export default function useCalculator() {
       let result = null;
       if (operator === '+') {
         result = parseFloat(firstOperand) + parseFloat(displayValue);
+        result = Decimal.add(firstOperand, displayValue).toString();
         setDisplayValue(String(result));
       } else if (operator === '-') {
-        result = parseFloat(firstOperand) - parseFloat(displayValue);
+        // result = parseFloat(firstOperand) - parseFloat(displayValue);
+        result = Decimal.sub(firstOperand, displayValue).toString();
         setDisplayValue(String(result));
       } else if (operator === 'x') {
-        result = parseFloat(firstOperand) * parseFloat(displayValue);
+        // result = parseFloat(firstOperand) * parseFloat(displayValue);
+        result = Decimal.mul(firstOperand, displayValue).toString();
         setDisplayValue(String(result));
       } else if (operator === '÷') {
-        result = Decimal.div(firstOperand, displayValue).toFixed(2).toString();
+        result = Decimal.div(firstOperand, displayValue).toString();
         if (result === 'NaN' || result === 'Infinity') {
           result = 'Error';
         }
@@ -111,6 +114,8 @@ export default function useCalculator() {
 
   return {
     displayValue,
+    firstOperand,
+    operator,
     handleDigit,
     handleOperator,
     handleClear,

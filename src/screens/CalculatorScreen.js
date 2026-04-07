@@ -12,7 +12,11 @@ const CalculatorScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Display displayValue={calculator.displayValue} />
+      <Display
+        displayValue={calculator.displayValue}
+        firstOperand={calculator.firstOperand}
+        operator={calculator.operator}
+      />
       <Keypad
         onDigit={calculator.handleDigit}
         onOperator={calculator.handleOperator}
