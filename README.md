@@ -155,9 +155,13 @@ A Loom video demo is available showcasing:
 
 You can download and try the Android APK here:
 
-👉 [Download APK](https://drive.google.com/file/d/1QHhyvshX5xmTphb13ZRGRW4wGOLfOvVD/view?usp=drive_link)
+👉 [Download Calculator APK](https://drive.google.com/file/d/1QHhyvshX5xmTphb13ZRGRW4wGOLfOvVD/view?usp=drive_link)
 
 > Note: APKs for all my projects are organized in a central Google Drive folder for easy access.
+
+All my project APKs are available here:
+
+👉 [All Project APKs](https://drive.google.com/drive/u/0/folders/11-XnLyt-24zsK9xtEJG7H9fIqq42SGFh)
 
 ---
 
