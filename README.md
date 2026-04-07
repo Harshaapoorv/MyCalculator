@@ -99,7 +99,7 @@ src/
 
 - **Custom Hook (`useCalculator`)**
   - Manages:
-    - Display value
+    - Display values of current and previous operands
     - Operator
     - Operand state
     - Calculation flow
@@ -150,6 +150,14 @@ A Loom video demo is available showcasing:
 - Error handling
 
 *(Add your Loom link here)*
+
+## 📦 APK Download
+
+You can download and try the Android APK here:
+
+👉 [Download APK](https://drive.google.com/file/d/1QHhyvshX5xmTphb13ZRGRW4wGOLfOvVD/view?usp=drive_link)
+
+> Note: APKs for all my projects are organized in a central Google Drive folder for easy access.
 
 ---
 
