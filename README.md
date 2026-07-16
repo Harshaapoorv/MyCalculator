@@ -1,9 +1,11 @@
+<div align="center">
+<img width="1828" height="860" alt="calculator" src="https://github.com/user-attachments/assets/45e987a4-57f0-48c6-95b5-e25424880ac5" />
 
 # 🧮 Simple Calculator App (React Native)
 
 A clean and fully functional **Simple Calculator mobile application** built using **React Native CLI**.  
 This project demonstrates strong fundamentals in state management, UI/UX design, theming, and scalable app architecture using custom hooks.
-
+</div>
 ---
 
 ## ✨ Features
