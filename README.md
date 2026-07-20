@@ -6,6 +6,7 @@
 A clean and fully functional **Simple Calculator mobile application** built using **React Native CLI**.  
 This project demonstrates strong fundamentals in state management, UI/UX design, theming, and scalable app architecture using custom hooks.
 </div>
+
 ---
 
 ## ✨ Features
